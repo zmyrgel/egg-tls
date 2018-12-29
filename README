@@ -1,0 +1,12 @@
+chicken-tls
+==============
+CHICKEN bindings to LibreSSL's TLS API.
+
+Usage
+-----
+
+
+License
+-------
+3-clause BSD. See LICENSE for details.
+
