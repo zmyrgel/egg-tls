@@ -6,7 +6,6 @@
   (export
    tls-version
 
-   tls-init!
    tls-config-error
    tls-error
    tls-config-new
@@ -161,10 +160,6 @@
 ;;     void *_cb_arg);
 ;; typedef ssize_t (*tls_write_cb)(struct tls *_ctx, const void *_buf,
 ;;     size_t _buflen, void *_cb_arg);
-
-;; int tls_init(void);
-(define (tls-init!)
-  ((foreign-lambda int "tls_init")))
 
 ;; const char *tls_config_error(struct tls_config *_config);
 (define (tls-config-error cfg)
