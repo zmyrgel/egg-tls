@@ -6,4 +6,6 @@
  (build-dependencies module-declarations)
  (foreign-dependencies libressl)
  (component-options (csc-options "-O3" "-d0" "-X" "module-declarations"))
- (components (extension tls) (link-options "-ltls")))
+ (components 
+   (extension tls
+     (link-options "-L" "-ltls")) ))
