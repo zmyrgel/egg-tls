@@ -26,7 +26,6 @@
    tls-config-set-crl-file!
    tls-config-set-crl-mem!
    tls-config-set-dheparams!
-   tls-config-set-ecdhecurve!
    tls-config-set-ecdhecurves!
    tls-config-set-key-file!
    tls-config-set-key-mem!
@@ -234,10 +233,6 @@
 ;; int tls_config_set_dheparams(struct tls_config *_config, const char *_params);
 (define (tls-config-set-dheparams! cfg params)
   ((foreign-lambda int "tls_config_set_dheparams" (c-pointer "struct tls_config") (const c-string)) cfg params))
-;; deprecated
-;; int tls_config_set_ecdhecurve(struct tls_config *_config, const char *_curve);
-(define (tls-config-set-ecdhecurve! cfg curve)
-  ((foreign-lambda int "tls_config_set_ecdhecurve" (c-pointer "struct tls_config") (const c-string)) cfg curve))
 ;; int tls_config_set_ecdhecurves(struct tls_config *_config, const char *_curves);
 (define (tls-config-set-ecdhecurves! cfg curves)
   ((foreign-lambda int "tls_config_set_ecdhecurves" (c-pointer "struct tls_config") (const c-string)) cfg curves))
