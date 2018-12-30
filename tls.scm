@@ -101,15 +101,14 @@
 ;;;
 ;;; TODO:
 ;;; - Fix time_t handling, currently uses integer64
+;;; - Replace C-like API with more Scheme-like version
 ;;; -
 ;;;
-
 
 (import (chicken foreign))
 
 (foreign-declare "#include <tls.h>")
 
-;; #define TLS_API	20180210
 (define (tls-version)
   (foreign-value "TLS_API" int))
 
